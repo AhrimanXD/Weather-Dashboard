@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <h1>Search Weather by City</h1>
+    <form method="post">
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather %}
+        {% if "error" in weather %}
+            <p style="color: red;">{{ weather.error }}</p>
+        {% else %}
+            <h2>Weather in {{ weather.city }}</h2>
+            <p>Temperature: {{ weather.temperature }}&deg;C</p>
+            <p>Feels Like: {{ weather.feel }}&deg;C</p>
+            <p>Description: {{ weather.description }}</p>
+            <p>Humidity: {{weather.humidity}}</p>
+            <p>Wind Speed: {{weather.speed}} m/s</p>
+            <p>Wind Direction: {{ weather.direction}}</p>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
