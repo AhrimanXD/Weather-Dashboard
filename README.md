@@ -5,7 +5,7 @@ This is a weather dashboard built using HTML and PYTHON. It allows users to chec
 ## Features
 - Search for the weather of any city.
 - Displays temperature, humidity, and other weather details.
-- Provides a 5-day weather forecast.
+
 
 ## Technologies Used
 - HTML
